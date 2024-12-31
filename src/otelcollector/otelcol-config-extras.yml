@@ -20,8 +20,8 @@
 exporters:
   coralogix:
     domain: "cx498.coralogix.com"
-    private_key: "cxtp_eMH1zvpSWbCR76KEUm7Aof4EfCe8Al"
-    application_name: "oteldemo2"
+    private_key: ""
+    application_name: "otel"
     subsystem_name: "oteldemo"
     timeout: 30s
 
