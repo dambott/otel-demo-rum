@@ -1,0 +1,35 @@
+# Copyright The OpenTelemetry Authors
+# SPDX-License-Identifier: Apache-2.0
+
+# extra settings to be merged into OpenTelemetry Collector configuration
+# do not delete this file
+
+## Example configuration for sending data to your own OTLP HTTP backend
+## Note: the spanmetrics exporter must be included in the exporters array
+## if overriding the traces pipeline.
+##
+#  exporters:
+#    otlphttp/example:
+#      endpoint: <your-endpoint-url>
+#
+#  service:
+#    pipelines:
+#      traces:
+#        exporters: [spanmetrics, otlphttp/example]
+
+exporters:
+  coralogix:
+    domain: "cx498.coralogix.com"
+    private_key: "cxtp_eMH1zvpSWbCR76KEUm7Aof4EfCe8Al"
+    application_name: "oteldemo2"
+    subsystem_name: "oteldemo"
+    timeout: 30s
+
+service:
+  pipelines:
+    traces:
+      exporters: [coralogix]
+    logs:
+      exporters: [coralogix]
+    metrics:
+      exporters: [coralogix]
